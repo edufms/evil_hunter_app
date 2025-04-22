@@ -25,7 +25,7 @@ classe_info = next((c for c in classes if c["nome"] == escolhida), None)
 
 if classe_info:
     st.header(classe_info["nome"])
-    st.image(classe_info["imagem"], width=200)
+    #st.image(classe_info["imagem"], width=200)
     st.markdown(f"**Descrição:** {classe_info['descricao']}")
     st.markdown(f"**Funções:** {', '.join(classe_info['funcoes'])}")
 
