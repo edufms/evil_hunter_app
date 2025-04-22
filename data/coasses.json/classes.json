@@ -1,0 +1,31 @@
+[
+    {
+      "nome": "Berserker",
+      "descricao": "Especialista em dano corpo a corpo. Alta força e resistência.",
+      "funcoes": ["DPS", "Tanque secundário"],
+      "subclasses": ["Raging Berserker", "Warrior of Fury"],
+      "imagem": "berserker.png"
+    },
+    {
+      "nome": "Ranger",
+      "descricao": "Atacante de longo alcance, ideal para eliminar inimigos à distância.",
+      "funcoes": ["DPS à distância"],
+      "subclasses": ["Sniper", "Beast Hunter"],
+      "imagem": "ranger.png"
+    },
+    {
+      "nome": "Paladin",
+      "descricao": "Combina defesa sólida com habilidades de suporte.",
+      "funcoes": ["Tank", "Suporte"],
+      "subclasses": ["Holy Guardian", "Knight of Order"],
+      "imagem": "paladin.png"
+    },
+    {
+      "nome": "Sorcerer",
+      "descricao": "Usa magia para causar dano em área e enfraquecer inimigos.",
+      "funcoes": ["Dano em área", "Controle de grupo"],
+      "subclasses": ["Archmage", "Dark Enchanter"],
+      "imagem": "sorcerer.png"
+    }
+  ]
+  
