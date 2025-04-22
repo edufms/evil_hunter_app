@@ -1,56 +1,60 @@
 import streamlit as st
 import json
-import os
 
-# Carregar dados
-@st.cache_data
+# Função para carregar as classes
 def load_classes():
-    with open("/app/nome-do-seu-repo/classes.json", "r", encoding="utf-8") as f:
+    with open("classes.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
+# Carregar dados
 classes = load_classes()
 
-# Sidebar
-st.sidebar.title("Evil Hunter Tycoon")
-classe_nomes = [c["nome"] for c in classes]
-classe_escolhida = st.sidebar.selectbox("Escolha uma classe:", classe_nomes)
+# Título do app
+st.title("Evil Hunter Tycoon - Guia de Classes")
+st.markdown("Explore as classes, subclasses e habilidades da 3ª classe.")
 
-# Conteúdo
-classe = next(c for c in classes if c["nome"] == classe_escolhida)
+# Seletor de classe
+classe_nomes = [classe["nome"] for classe in classes]
+escolhida = st.selectbox("Escolha uma classe:", classe_nomes)
 
-classe = st.selectbox("Escolha uma classe", [c["nome"] for c in classes])
+# Encontrar a classe selecionada
+classe_info = next((c for c in classes if c["nome"] == escolhida), None)
 
-classe_info = next(c for c in classes if c["nome"] == classe)
-st.markdown(f"### {classe_info['descricao']}")
+if classe_info:
+    st.header(classe_info["nome"])
+    st.image(classe_info["imagem"], width=200)
+    st.markdown(f"**Descrição:** {classe_info['descricao']}")
+    st.markdown(f"**Funções:** {', '.join(classe_info['funcoes'])}")
 
-for sub in classe_info["subclasses"]:
-    st.markdown(f"#### Subclasse: {sub['nome']}")
-    st.markdown(f"Descrição: {sub['descricao']}")
-    for hab in sub.get("habilidades_3a_classe", []):
-        st.markdown(f"- **{hab['nome']}**: {hab['descricao']}")
+    if "requisitos" in classe_info:
+        req = classe_info["requisitos"]
+        st.markdown("**Requisitos:**")
+        st.markdown(f"- Nível mínimo: {req.get('nivel_minimo', '-')}")
+        st.markdown(f"- Itens necessários: {', '.join(req.get('itens_necessarios', []))}")
 
-st.title(f"Classe: {classe['nome']}")
-st.markdown(f"📝 **Descrição:** {classe['descricao']}")
-st.markdown("🎯 **Funções principais:**")
-st.markdown("- " + "\n- ".join(classe["funcoes"]))
+    if "builds" in classe_info:
+        st.markdown("**Builds Sugeridas:**")
+        for build in classe_info["builds"]:
+            st.markdown(f"- **{build['nome']}**: {build['descricao']}")
+            st.markdown(f"  - Atributos: {', '.join(build['atributos'])}")
+            st.markdown(f"  - Equipamentos: {', '.join(build['equipamentos'])}")
 
-if classe.get("subclasses"):
-    st.subheader("🧬 Subclasses")
-    for sub in classe["subclasses"]:
-        st.markdown(f"### {sub['nome']}")
-        st.markdown(f"📝 {sub['descricao']}")
-        st.markdown("🎯 **Funções:**")
-        st.markdown("- " + "\n- ".join(sub["funcoes"]))
-        sub_img_path = os.path.join("assets", "imagens_das_classes", sub["imagem"])
-        if os.path.exists(sub_img_path):
-            st.image(sub_img_path, width=250)
-        st.markdown("---")
+    if "utilidades" in classe_info:
+        st.markdown(f"**Utilidades:** {', '.join(classe_info['utilidades'])}")
 
+    if "subclasses" in classe_info:
+        st.subheader("Subclasses:")
+        for sub in classe_info["subclasses"]:
+            st.markdown(f"### {sub['nome']}")
+            st.image(sub["imagem"], width=150)
+            st.markdown(f"**Descrição:** {sub['descricao']}")
+            st.markdown(f"**Funções:** {', '.join(sub['funcoes'])}")
 
-# Mostrar imagem
-img_path = os.path.join("assets", "imagens_das_classes", classe["imagem"])
-if os.path.exists(img_path):
-    st.image(img_path, width=300)
-else:
-    st.warning("Imagem não encontrada.")
+            if sub.get("habilidades_3a_classe"):
+                st.markdown("**Habilidades da 3ª Classe:**")
+                for hab in sub["habilidades_3a_classe"]:
+                    st.markdown(f"- **{hab['nome']}**: {hab['descricao']}")
 
+# Rodapé
+st.markdown("---")
+st.caption("Desenvolvido por fãs para a comunidade de Evil Hunter Tycoon")
