@@ -1,31 +1,149 @@
 [
-    {
-      "nome": "Berserker",
-      "descricao": "Especialista em dano corpo a corpo. Alta força e resistência.",
-      "funcoes": ["DPS", "Tanque secundário"],
-      "subclasses": ["Raging Berserker", "Warrior of Fury"],
-      "imagem": "berserker.png"
+  {
+    "nome": "Berserker",
+    "descricao": "Especialista em dano físico corpo a corpo. Forte e resistente.",
+    "funcoes": ["DPS", "Tanque secundário"],
+    "imagem": "berserker.png",
+    "requisitos": {
+      "nivel_minimo": 10,
+      "itens_necessarios": ["Espada", "Armadura Pesada"]
     },
-    {
-      "nome": "Ranger",
-      "descricao": "Atacante de longo alcance, ideal para eliminar inimigos à distância.",
-      "funcoes": ["DPS à distância"],
-      "subclasses": ["Sniper", "Beast Hunter"],
-      "imagem": "ranger.png"
-    },
-    {
-      "nome": "Paladin",
-      "descricao": "Combina defesa sólida com habilidades de suporte.",
-      "funcoes": ["Tank", "Suporte"],
-      "subclasses": ["Holy Guardian", "Knight of Order"],
-      "imagem": "paladin.png"
-    },
-    {
-      "nome": "Sorcerer",
-      "descricao": "Usa magia para causar dano em área e enfraquecer inimigos.",
-      "funcoes": ["Dano em área", "Controle de grupo"],
-      "subclasses": ["Archmage", "Dark Enchanter"],
-      "imagem": "sorcerer.png"
-    }
-  ]
-  
+    "builds": [
+      {
+        "nome": "Full STR",
+        "descricao": "Maximiza o dano físico com força elevada.",
+        "atributos": ["STR", "HP"],
+        "equipamentos": ["Espada de duas mãos", "Elmo de guerra"]
+      }
+    ],
+    "utilidades": ["PvE", "Chefes", "Tanque secundário"],
+    "subclasses": [
+      {
+        "nome": "Arma Dupla",
+        "descricao": "Lutador ágil que empunha duas armas simultaneamente.",
+        "funcoes": ["Dano rápido", "Crítico alto"],
+        "imagem": "arma_dupla.png",
+        "habilidades_3a_classe": [
+          {
+            "nome": "Grito de Guerra",
+            "descricao": "Aumenta o ataque de todos os aliados próximos por tempo limitado."
+          },
+          {
+            "nome": "Aura da Lama",
+            "descricao": "Reduz a velocidade de movimento dos inimigos ao redor."
+          },
+          {
+            "nome": "Ciclone",
+            "descricao": "Ataque giratório que causa dano em área ao redor do usuário."
+          }
+        ]
+      },
+      {
+        "nome": "Espiral da Morte",
+        "descricao": "Especialista em ataques consecutivos e rápidos.",
+        "funcoes": ["Burst DPS"],
+        "imagem": "espiral_morte.png",
+        "habilidades_3a_classe": []
+      },
+      {
+        "nome": "Pulverizador",
+        "descricao": "Consegue quebrar defesas com ataques pesados.",
+        "funcoes": ["Dano massivo", "Quebra de armadura"],
+        "imagem": "pulverizador.png",
+        "habilidades_3a_classe": []
+      }
+    ]
+  },
+  {
+    "nome": "Ranger",
+    "descricao": "Atirador de longa distância, ideal para eliminar inimigos antes que se aproximem.",
+    "funcoes": ["DPS à distância", "Exploração"],
+    "imagem": "ranger.png",
+    "subclasses": [
+      {
+        "nome": "Caçador Sombrio",
+        "descricao": "Trabalha nas sombras e aplica debuffs.",
+        "funcoes": ["Dano contínuo", "Controle"],
+        "imagem": "cacador_sombrio.png",
+        "habilidades_3a_classe": [
+          {
+            "nome": "Grito de Guerra",
+            "descricao": "Aumenta o ataque de todos os aliados próximos por tempo limitado."
+          },
+          {
+            "nome": "Aura da Lama",
+            "descricao": "Reduz a velocidade de movimento dos inimigos ao redor."
+          },
+          {
+            "nome": "Ciclone",
+            "descricao": "Ataque giratório que causa dano em área ao redor do usuário."
+          }
+        ]
+      },
+      {
+        "nome": "Sniper",
+        "descricao": "Causa dano crítico com alta precisão.",
+        "funcoes": ["Crítico", "Alvo único"],
+        "imagem": "sniper.png"
+      },
+      {
+        "nome": "Batedor",
+        "descricao": "Movimentação veloz com alta evasão.",
+        "funcoes": ["Esquiva", "Exploração"],
+        "imagem": "batedor.png"
+      }
+    ]
+  },
+  {
+    "nome": "Paladino",
+    "descricao": "Defensor sagrado com habilidades de cura e proteção.",
+    "funcoes": ["Tanque", "Suporte"],
+    "imagem": "paladino.png",
+    "subclasses": [
+      {
+        "nome": "Guardião Divino",
+        "descricao": "Foca em defesa total e mitigação de dano.",
+        "funcoes": ["Mitigação", "Resistência"],
+        "imagem": "guardiao.png"
+      },
+      {
+        "nome": "Mestre do Escudo",
+        "descricao": "Utiliza escudo para bloquear e contra-atacar.",
+        "funcoes": ["Defesa ativa", "Interrupções"],
+        "imagem": "mestre_escudo.png"
+      },
+      {
+        "nome": "Templário",
+        "descricao": "Combina fé e força para proteger aliados.",
+        "funcoes": ["Suporte defensivo"],
+        "imagem": "templario.png"
+      }
+    ]
+  },
+  {
+    "nome": "Feiticeiro",
+    "descricao": "Usuário de magia arcana com alto dano em área.",
+    "funcoes": ["Dano mágico", "Controle de grupo"],
+    "imagem": "feiticeiro.png",
+    "subclasses": [
+      {
+        "nome": "Elementalista",
+        "descricao": "Controla os quatro elementos para causar destruição.",
+        "funcoes": ["Área", "Controle elemental"],
+        "imagem": "elementalista.png"
+      },
+      {
+        "nome": "Invocador",
+        "descricao": "Chama criaturas mágicas para auxiliá-lo.",
+        "funcoes": ["Suporte mágico", "Controle de campo"],
+        "imagem": "invocador.png"
+      },
+      {
+        "nome": "Arcano Sombrio",
+        "descricao": "Especialista em maldições e dano residual.",
+        "funcoes": ["DOT", "Debuff"],
+        "imagem": "arcano_sombrio.png"
+      }
+    ]
+  }
+]
