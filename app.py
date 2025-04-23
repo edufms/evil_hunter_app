@@ -43,7 +43,6 @@ if classe_info:
         st.subheader("Subclasses:")
         for sub in classe_info["subclasses"]:
             st.markdown(f"### {sub['nome']}")
-            st.image(sub["imagem"], width=150)
             st.markdown(f"**Descrição:** {sub['descricao']}")
             st.markdown(f"**Funções:** {', '.join(sub['funcoes'])}")
 
