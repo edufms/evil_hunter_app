@@ -1,16 +1,10 @@
 import streamlit as st
 import json
 import os
+from utils import load_data
 
 # Carregar dados
-@st.cache_data
-def load_classes():
-    with open("data/classes.json", "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-# Carregar dados
-classes = load_classes()
+classes = load_data.load_classes('utils/classes.yaml')
 
 # Título do app
 st.title("Evil Hunter Tycoon - Guia de Classes")
