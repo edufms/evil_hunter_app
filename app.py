@@ -4,7 +4,7 @@ import os
 import utils.load_data
 
 # Carregar dados
-classes = load_classes('utils/classes.json')
+classes = load_data.load_file('utils/classes.json')
 
 # Título do app
 st.title("Evil Hunter Tycoon - Guia de Classes")
