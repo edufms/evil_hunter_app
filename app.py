@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import os
-from utils import load_data
+import utils.load_data
 
 # Carregar dados
 classes = load_data.load_classes('utils/classes.yaml')
