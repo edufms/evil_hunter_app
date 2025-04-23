@@ -1,0 +1,65 @@
+- nome: Furioso
+  descricao: Guerreiro feroz que usa ataques físicos devastadores.
+  funcoes: [Dano Físico, Tank]
+  habilidade1: Furia
+  descricao_habilidade1: Aumenta a Velocidade de Ataque
+  habilidade2: Grito de Guerra
+  descricao_habilidade2: 30% de chance de atordoar o inimigo
+  utilidades: [PvE, Chefes, Arena]
+  2a_classe:
+    - classe: 
+      habilidade: Arma Dupla
+      descricao: Utiliza 2 espadas para causar dano extra (até 80%)
+      funcoes: [Dano Rápido]
+    - classe: 
+      habilidade: Espiral da Morte
+      descricao: Causa um grande dano e se cura em % do dano causado
+      funcoes: [Dano Contínuo]
+    - classe: 
+      habilidade: Pulverizador
+      descricao: Chance de causar um dano em área durante os ataques
+      funcoes: [Dano em Área]
+  3a_classe:
+    - classe: Bárbaro
+      habilidade: Grito de Guerra
+      descricao: Aumenta ataque de todos os aliados próximos
+    - classe: Santo da Espada
+      habilidade: Aura da Lama
+      descricao: Reduz velocidade dos inimigos ao redor
+    - classe: Destruidor
+      habilidade: Ciclone
+      descricao: Ataque giratório que atinge múltiplos inimigos
+  builds:
+    - descricao: Bárbaro / Tank
+      funcoes: PvE
+      build:
+        velocidade_ataque: 1.00
+        evasao: 40%
+        reducao_dano:
+          chance: 100%
+          valor: 25%
+        prioridade_secundaria:
+          - chance_critica: 50%
+          - dano_critico
+          - defesa
+          - hp
+        arma:
+          efeito_necessario: "X% de chance de lançar evasão de nível 1"
+        caracteristicas:
+          homem_de_aco:
+            prioridade: hp
+          agil:
+            observacao: "ok, mas não tão bom quanto Homem de aço"
+    - descricao: Santo da Espada - PvP
+      build:
+        velocidade_ataque: 1.00
+        evasao: 40%
+        chance_critica: 50%
+        bonus_tipo:
+          tipo: primata
+          efeito: "aumenta % de dano contra tipos primatas"
+        prioridade_secundaria:
+          - dano_critico
+          - atk
+        arma:
+          efeito_necessario: "% de chance de se transformar em um Lorde Demônio ao atacar"

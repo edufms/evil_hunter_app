@@ -1,13 +1,9 @@
 [
   {
     "nome": "Berserker",
-    "descricao": "Especialista em dano físico corpo a corpo. Forte e resistente.",
-    "funcoes": ["DPS", "Tanque secundário"],
+    "descricao": "Especialista em dano físico corpo a corpo. Forte e resistente. Classe que será muito importante até chegar ao tormenta III.",
+    "funcoes": ["DPS"],
     "imagem": "berserker.png",
-    "requisitos": {
-      "nivel_minimo": 10,
-      "itens_necessarios": ["Espada", "Armadura Pesada"]
-    },
     "builds": [
       {
         "nome": "Full STR",
