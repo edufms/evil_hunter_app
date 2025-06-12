@@ -18,7 +18,7 @@ def main():
         margin-bottom: 2rem;
     }
     .result-box {
-        background-color: #f0f2f6;
+        background-color: #262730;
         padding: 1rem;
         border-radius: 0.5rem;
         margin-top: 1rem;
@@ -29,37 +29,37 @@ def main():
     </style>
     """, unsafe_allow_html=True)
     
-    st.markdown("<h1 class='main-title'>ᴾᵂᴿElmiel's ATK SPD CALCULATOR</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-title'>Calculadora de Atq Spd de EduardoZack</h1>", unsafe_allow_html=True)
     
     # Dados de lookup para diferentes tipos de hunter e armas
     lookup = {
         "berserker": {
-            "ancient": {"atk": 83916, "spd": 2.00},
-            "primal": {"atk": 109188, "spd": 2.00},
-            "pvp": {"atk": 110840, "spd": 2.20},
-            "pvpult": {"atk": 1, "spd": 2.20},
-            "wb": {"atk": 1, "spd": 2.20}
+            "ancient": {"spd": 2.00},
+            "primal": {"spd": 2.00},
+            "pvp": {"spd": 2.20},
+            "pvpult": {"spd": 2.20},
+            "wb": {"spd": 2.20}
         },
         "sorcerer": {
-            "ancient": {"atk": 92308, "spd": 2.20},
-            "primal": {"atk": 120107, "spd": 2.20},
-            "pvp": {"atk": 115879, "spd": 2.30},
-            "pvpult": {"atk": 1, "spd": 2.30},
-            "wb": {"atk": 1, "spd": 2.30}
+            "ancient": {"spd": 2.20},
+            "primal": {"spd": 2.20},
+            "pvp": {"spd": 2.30},
+            "pvpult": {"spd": 2.30},
+            "wb": {"spd": 2.30}
         },
         "ranger": {
-            "ancient": {"atk": 75524, "spd": 1.80},
-            "primal": {"atk": 98269, "spd": 1.80},
-            "pvp": {"atk": 100764, "spd": 2.00},
-            "pvpult": {"atk": 1, "spd": 2.00},
-            "wb": {"atk": 1, "spd": 2.00}
+            "ancient": {"spd": 1.80},
+            "primal": {"spd": 1.80},
+            "pvp": {"spd": 2.00},
+            "pvpult": {"spd": 2.00},
+            "wb": {"spd": 2.00}
         },
         "paladin": {
-            "ancient": {"atk": 100699, "spd": 2.40},
-            "primal": {"atk": 131026, "spd": 2.40},
-            "pvp": {"atk": 125995, "spd": 2.50},
-            "pvpult": {"atk": 1, "spd": 2.50},
-            "wb": {"atk": 1, "spd": 2.50}
+            "ancient": {"spd": 2.40},
+            "primal": {"spd": 2.40},
+            "pvp": {"spd": 2.50},
+            "pvpult": {"spd": 2.50},
+            "wb": {"spd": 2.50}
         }
     }
     
@@ -99,14 +99,14 @@ def main():
         
         # Guild ATK SPD Buff
         guild = st.selectbox(
-            "**Guild ATK SPD Buff:**",
+            "**Buff de ATK SPD da Guild:**",
             [0, 1, 2, 3, 4, 5],
             format_func=lambda x: f"{x}%"
         )
         
         # Secret Tech
         s_tech = st.number_input(
-            "**Secret Tech ATK SPD % (Lv100:10%):**",
+            "**ATK SPD % - Técnicas Secretas (Lv100:10%):**",
             min_value=0.0,
             max_value=10.0,
             value=10.0,
@@ -116,7 +116,7 @@ def main():
     with col2:
         # Equipment Bonus
         equip_bonus = st.number_input(
-            "**Equipment Bonus % + ATK SPD Rune %:**",
+            "**% Bonus de Equipamento + % Runa de ATQ Spd:**",
             min_value=0.0,
             value=0.0,
             step=0.1
@@ -130,7 +130,7 @@ def main():
             "Purple": 30
         }
         hunter_stat_label = st.selectbox(
-            "**Hunter Stat:**",
+            "**Cor do Status de ATQ SPD:**",
             list(hunter_stat_options.keys())
         )
         hunter_stat = hunter_stat_options[hunter_stat_label]
